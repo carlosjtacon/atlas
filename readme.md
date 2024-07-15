@@ -72,3 +72,13 @@
 - https://leafletjs.com
 - http://mpetazzoni.github.io/leaflet-gpx/
 - https://github.com/mapbox/togeojson
+
+
+Ideas:
+- [ ] First letter of each post as a lombardic medieval capital letter with colors maybe
+- [ ] Medieval carved wooden engraving style for website elements
+- [ ] Logo design can be the wood mold stamp in 3d / stamped in 2d
+- [ ] Atlas titan character illustrated for about page
+- [ ] Animation of hover elements and show an animation of the carving process
+
+
