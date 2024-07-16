@@ -75,10 +75,16 @@
 
 
 Ideas:
-- [ ] First letter of each post as a lombardic medieval capital letter with colors maybe
+- [ ] First letter of each trip as a lombardic medieval capital letter with colors maybe
 - [ ] Medieval carved wooden engraving style for website elements
 - [ ] Logo design can be the wood mold stamp in 3d / stamped in 2d
 - [ ] Atlas titan character illustrated for about page
 - [ ] Animation of hover elements and show an animation of the carving process
 
 
+Capital letters:
+- We can maybe use a regular font with a custom style but put a bg image, maybe there is a border property to separate it. We could animate a svg for the build up of the letter.
+- We can have a way to override the generic capital letters with a custom drawn one for the trip.
+
+Engraving style css:
+- Find a way to add texture to text
