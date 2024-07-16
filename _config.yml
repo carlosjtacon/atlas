@@ -3,6 +3,8 @@ collections:
     output: true
   pages:
     output: true
+  trips:
+    output: true
 
 defaults:
   - scope:
@@ -12,9 +14,9 @@ defaults:
       layout: "person"
   - scope:
       path: ""
-      type: "posts"
+      type: "trips"
     values:
-      layout: "post"
+      layout: "trip"
   - scope:
       path: ""
     values:
