@@ -4,7 +4,7 @@ My personal atlas website, to keep track of what I do - when, where, with who...
 I tend to forget all the details, so I want a way to remember.
 
 ### Different pages:
-- [ ] `about` - What is Atlas.
+- [ ] `about` - What is Atlas maybe it can be just one page with 'whoami'. 
 
 - [ ] `globe` - 3D globe view, rendered with three.js with 1. pins that show different trips coordinates and 2. connection lines that follow the personal timeline steps.
 
@@ -53,3 +53,4 @@ Engraving style css:
 - https://leafletjs.com
 - http://mpetazzoni.github.io/leaflet-gpx/
 - https://github.com/mapbox/togeojson
+- https://0xacab.org/sutty/jekyll/jekyll-activity-pub
