@@ -6,6 +6,8 @@ collections:
   trips:
     output: true
 
+permalink: "/:categories/:title"
+
 defaults:
   - scope:
       path: ""
@@ -17,6 +19,11 @@ defaults:
       type: "trips"
     values:
       layout: "trip"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
   - scope:
       path: ""
     values:

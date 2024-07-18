@@ -1,0 +1,15 @@
+---
+layout: default
+title: Trips
+permalink: /trips
+---
+<h1>Latest trips</h1>
+
+<ul>
+  {% for trip in site.trips %}
+    <li>
+      <h2><a href="{{ trip.url }}">{{ trip.title }}</a></h2>
+      {{ trip.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
