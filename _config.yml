@@ -33,3 +33,6 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+
+exclude:
+  - "*readme.md"

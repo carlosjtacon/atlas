@@ -8,7 +8,7 @@
     - `trip/snowdonia.html` - Show trip metadata and article.
 
 
-- Person data model - `carlos.json`
+- Person data model - `carlos.json` [Here](_people/readme.md)
 ```json
 {
     "name": "Carlos",
@@ -32,7 +32,7 @@
 }
 ```
 
-- Trip data model - `snowdonia.json`
+- Trip data model - `snowdonia.json` [Here](_posts/trips/readme.md)
 ```json
 {
     "who": [
