@@ -1,38 +1,34 @@
+permalink: "/:categories/:title"
+
 collections:
   people:
     output: true
   pages:
     output: true
-  trips:
-    output: true
-
-permalink: "/:categories/:title"
 
 defaults:
   - scope:
       path: ""
-      type: "people"
-    values:
-      layout: "person"
-  - scope:
-      path: ""
-      type: "trips"
-    values:
-      layout: "trip"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
     values:
       layout: "default"
+
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
 
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: "person"
+      
 exclude:
   - "*readme.md"

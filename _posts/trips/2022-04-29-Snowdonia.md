@@ -14,13 +14,12 @@ where:
   coordinates: [52.9006, -3.8963]
 what: Hiking
 how:
-  - Bus
   - Train
   - Walk
 backdrop: .jpg
 track: .gpx
 ---
 
-### Example for a trip post
+### Hiking Snowdonia
 
-Here goes the content of the trip post.
+This was our first big trip in the UK.
