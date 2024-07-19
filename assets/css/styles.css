@@ -4,28 +4,50 @@
     font-style: normal;
     font-display: swap;
     src: url("/assets/fonts/libre-baskerville/LibreBaskerville-Regular.woff2") format("woff2"); 
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: LibreBaskerville;
     font-weight: 700;
     font-style: normal;
     font-display: swap;
     src: url("/assets/fonts/libre-baskerville/LibreBaskerville-Bold.woff2") format("woff2"); 
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: LibreBaskerville;
     font-weight: 400;
     font-style: italic;
     font-display: swap;
     src: url("/assets/fonts/libre-baskerville/LibreBaskerville-Italic.woff2") format("woff2"); 
-  }
-  
-  :root {
+}
+
+:root {
     font-family: LibreBaskerville, serif;
-  }
-  
-  .current {
+}
+
+.current {
     color: green;
-  }
+}
+
+/* CAPITAL LETTERS */
+h1 +  p::first-letter {
+    margin-right: 6px;
+    
+    background-color: black;
+    border: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 0 red;
+    padding: 6px 6px;
+    float: left;
+    height: 100px;
+    width:80px;
+    
+    color: black;
+    font-weight: bold;
+    font-size: 500%;
+    -webkit-text-stroke: 2px #fff;
+
+    background-image: url(../images/capitals/backgrounds/demo.svg);
+}
