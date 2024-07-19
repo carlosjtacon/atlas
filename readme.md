@@ -22,6 +22,7 @@ I tend to forget all the details, so I want a way to remember.
 - [timeline.yml](_posts/timeline/readme.md)
 - [track.yml](_posts/tracks/readme.md) ???????? - Maybe in `_data` or just using a generator from `assets`
 - [trip.yml](_posts/trips/readme.md)
+- [ ] Generate json data to make it easier to work with it [example](https://github.com/mparuszewski/jekyll-json-generator)
 
 ### Design language
 - [ ] First letter of each post as a lombardic medieval capital letter.
