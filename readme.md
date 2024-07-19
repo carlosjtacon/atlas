@@ -28,6 +28,10 @@ I tend to forget all the details, so I want a way to remember.
 - [ ] First letter of each post as a lombardic medieval capital letter.
     - We should have a generic alphabet of letters but can have a way to override the generic capital letters with a custom drawn one for the trip.
     - We can use a background / foreground image animated colored SVG or Lottie for carving animation, while keeping the font with a background color border. 
+        1. Static background image photo / raster. Choose design from the post front matter.
+        2. Vectorize image, wood carving style.
+        3. Add foreground image.
+        4. Animate it.
     - We can also create a custom font with dynamic width instead.
 - [ ] Medieval-inspired carved wooden engraving style for website elements like navigation, menus... etc
     - Animation of hover elements and show an animation of the carving process
