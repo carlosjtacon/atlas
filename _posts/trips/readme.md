@@ -12,6 +12,8 @@ when:
 where:
   name: Snowdonia
   coordinates: [52.9006, -3.8963]
+  from:
+  to:
 what: Hiking
 how:
   - Bus

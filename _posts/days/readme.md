@@ -8,6 +8,8 @@ when: 2024-07-18
 where:
   name: La Vèzere
   coordinates: [44.9361, 1.0132]
+  from:
+  to:
 what: Canoe
 how:
   - Car
