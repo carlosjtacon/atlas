@@ -10,7 +10,8 @@ where:
   coordinates: [44.9361, 1.0132]
   from:
   to:
-what: Canoe
+what: 
+  - Canoe
 how:
   - Car
   - Paddle

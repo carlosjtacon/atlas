@@ -14,7 +14,8 @@ where:
   coordinates: [52.9006, -3.8963]
   from:
   to:
-what: Hiking
+what: 
+  - Hiking
 how:
   - Bus
   - Train
