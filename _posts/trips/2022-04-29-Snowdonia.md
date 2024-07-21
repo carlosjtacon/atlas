@@ -12,7 +12,6 @@ when:
 where:
   name: Snowdonia
   coordinates: [52.9006, -3.8963]
-  from: London
   to:
 what: 
   - Hiking
