@@ -4,18 +4,19 @@ category: trip
 who:
   - Carlos
   - Alix
+  - Evangelos
+  - Ryu
 when:
-  start:
-  end: 
+  start: 2023-09-02
+  end: 2023-09-03
 where:
-  name: Dorset
+  name: Cirencester
   coordinates: [?]
-  to:
+  to: Kingsham
 what: 
   - Hiking
 how:
   - Bus
-  - Train
   - Walk
 backdrop: .jpg
 track: .gpx
