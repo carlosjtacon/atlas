@@ -11,7 +11,7 @@ when:
   end: 2023-09-03
 where:
   name: Cirencester
-  coordinates: [?]
+  coordinates: [ 51.7904, -1.9586 ]
   to: Kingsham
 what: 
   - Hiking

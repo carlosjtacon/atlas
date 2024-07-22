@@ -10,7 +10,7 @@ when:
   end: 2024-07-07
 where:
   name: Isle of Wigh
-  coordinates: [?]
+  coordinates: [ 50.6938, -1.3047 ]
   to:
 what: 
   - Hiking
