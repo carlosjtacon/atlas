@@ -59,3 +59,18 @@ I tend to forget all the details, so I want a way to remember.
 - https://0xacab.org/sutty/jekyll/jekyll-activity-pub
 - https://paul.kinlan.me/adding-activity-pub-to-your-static-site/
 - https://macwright.com/2022/12/09/activitypub.html
+
+
+
+### Pending data to add
+
+#### Trips
+- Cycling Canterbury to Rye
+
+#### Days
+- Canterbury
+- Cambridge
+- Oxford
+- Battle Abbey
+- Balcombe
+- Tunbridge wells to Hastings
