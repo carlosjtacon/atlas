@@ -1,0 +1,20 @@
+---
+layout: none
+---
+
+{%- capture people -%}
+{%- for post in site.posts -%}
+{{post.who | compact | join: "," }},
+{%- endfor -%}
+{%- endcapture -%}
+
+{%- assign people = people | split: "," | uniq | sort_natural -%}
+
+{
+    "people": [ {% for person in people %}
+        {%- if person.size > 0  %}
+        "{{person}}"{% unless forloop.last %},{% endunless %}
+        {%- endif %}
+        {%- endfor %}
+    ]
+}
