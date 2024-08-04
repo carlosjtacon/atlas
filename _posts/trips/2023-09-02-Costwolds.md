@@ -15,9 +15,6 @@ where:
   to: Kingsham
 what: 
   - Hiking
-how:
-  - Bus
-  - Walk
 backdrop: .jpg
 track: .gpx
 ---

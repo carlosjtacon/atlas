@@ -15,10 +15,6 @@ where:
   to:
 what: 
   - Hiking
-how:
-  - Bus
-  - Train
-  - Walk
 backdrop: .jpg
 track: .gpx
 ---
