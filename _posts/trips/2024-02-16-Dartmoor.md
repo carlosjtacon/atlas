@@ -1,5 +1,5 @@
 ---
-category: trip
+category: trips
 
 who:
   - Carlos

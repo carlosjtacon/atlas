@@ -2,7 +2,20 @@
 layout: default
 title: Stream
 permalink: /stream/index.html
+
+categories: 
+  - days
+  - trips
+  - timeline
 ---
+
+<ul>
+  {% for item in page.categories %}
+    <li>
+      <p><a href="{{ item }}">{{ item }}</a></p>
+    </li>
+  {% endfor %}
+</ul>
 
 <h1>Latest posts</h1>
 

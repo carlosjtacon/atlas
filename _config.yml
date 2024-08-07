@@ -18,7 +18,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      permalink: "/:categories/:title"
+      permalink: "/stream/:slugified_categories/:year:month-:title"
       layout: "post"
       
 exclude:

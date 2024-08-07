@@ -1,5 +1,5 @@
 ---
-category: day
+category: days
 
 who:
   - Carlos
