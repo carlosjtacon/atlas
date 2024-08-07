@@ -8,3 +8,4 @@ vendor/
 
 # macOS
 .DS_Store
+*~lock~
