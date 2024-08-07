@@ -5,15 +5,16 @@ layout: base
 sections:
   - name: Stream
     link: /stream
-  - name: Trips
-    link: /trips
+  - name: Globe
+    link: /globe
+  - name: Mappa
+    link: /mappa
   - name: Who
     link: /whoami
 ---
 
 <nav>
     {% for item in page.sections %}
-      <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+      <a href="{{ item.link }}">{{ item.name }}</a>
     {% endfor %}
 </nav>
-  

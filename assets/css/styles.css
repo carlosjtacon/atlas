@@ -26,10 +26,6 @@
     font-family: LibreBaskerville, serif;
 }
 
-.current {
-    color: green;
-}
-
 /* CAPITAL LETTERS */
 h1 +  p::first-letter {
     margin-right: 6px;
