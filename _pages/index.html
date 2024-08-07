@@ -17,11 +17,11 @@ sections:
     link: /persona
 ---
 
-<ul>
-    {% for item in page.sections %}
-    <li>
-    <h2><a href="{{ item.link }}">{{ item.name }}</a></h2>
-    {{ post.excerpt }}
-    </li>
-    {% endfor %}
-</ul>
+
+{% for item in page.sections %}
+  <a href="{{ item.link }}">
+    <div class="section" style="background-image: url('/assets/images/capitals/backgrounds/demo.svg');">
+      <span>{{item.name}}</span>
+    </div>
+  </a>
+{% endfor %}
