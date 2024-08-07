@@ -1,8 +1,4 @@
-permalink: "/:categories/:title"
-
 collections:
-  people:
-    output: true
   pages:
     output: true
 
@@ -22,13 +18,8 @@ defaults:
       path: ""
       type: "posts"
     values:
+      permalink: "/:categories/:title"
       layout: "post"
-
-  - scope:
-      path: ""
-      type: "people"
-    values:
-      layout: "person"
       
 exclude:
   - "*readme.md"
