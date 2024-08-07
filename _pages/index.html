@@ -9,12 +9,19 @@ sections:
     link: /globe
   - name: Mappa
     link: /mappa
-  - name: Who
-    link: /whoami
+  - name: Line
+    link: /line
+  - name: Tracks
+    link: /tracks
+  - name: Persona
+    link: /persona
 ---
 
-<nav>
+<ul>
     {% for item in page.sections %}
-      <a href="{{ item.link }}">{{ item.name }}</a>
+    <li>
+    <h2><a href="{{ item.link }}">{{ item.name }}</a></h2>
+    {{ post.excerpt }}
+    </li>
     {% endfor %}
-</nav>
+</ul>

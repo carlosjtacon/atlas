@@ -4,13 +4,17 @@ My personal atlas website, to keep track of what I do - when, where, with who...
 I tend to forget all the details, so I want a way to remember.
 
 ### Different pages:
+- [ ] `stream` - Timeline view for all posts with a tag showing the category. Can be also the RSS. Maybe it could be filtered by metadata (people, transportation...)
+
 - [ ] `globe` - 3D globe view, rendered with three.js with 1. pins that show different trips coordinates and 2. connection lines that follow the personal timeline steps.
 
 - [ ] `mappa` - 2D vector world map minimal color theme with all the tracks displayed and framed in a bounding square.
 
-- [ ] `whoami` - What is Atlas. Show carlos/person data, draw timeline and maybe also add trips on it (two different levels in the timeline).
+- [ ] `line` - Timeline view of all posts, with different levels of view for timeline, days and trip items.
 
-- [ ] `stream` - Timeline view for all posts with a tag showing the category. Can be also the RSS. Maybe it could be filtered by metadata (people, transportation...)
+- [ ] `tracks` - List of gpx from static files.
+
+- [ ] `persona` - Why Atlas and who am I. Show carlos/person data, draw timeline and maybe also add trips on it (two different levels in the timeline).
 
 - [ ] `category/index` - Timeline view page for categories (days, timeline, tracks, trips). Maybe it could be filtered by metadata (people, transportation...)
 
