@@ -20,6 +20,11 @@ defaults:
     values:
       permalink: "/stream/:slugified_categories/:year:month-:title"
       layout: "post"
+
+  - scope:
+      path: "assets/tracks"
+    values:
+      type: gpx
       
 exclude:
   - "*readme.md"

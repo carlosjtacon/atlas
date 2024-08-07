@@ -4,4 +4,11 @@ permalink: /tracks/index.html
 title: Tracks
 ---
 
-Tracks
+<ul>
+    {% assign tracks = site.static_files | where: "type", "gpx" %}
+    {% for track in tracks %}
+    <li>
+        <p>{{ track.basename }} - {{ track.path }}</p>
+    </li>
+    {% endfor %}
+</ul>
