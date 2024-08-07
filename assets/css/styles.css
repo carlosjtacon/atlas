@@ -23,8 +23,49 @@
 }
 
 :root {
-    font-family: LibreBaskerville, serif;
+    --colorBlack: rgb(28, 28, 28);
+    --colorWhite: rgb(230, 230, 230);
+    --colorBlue: rgb(12, 130, 176);
+    --colorGreen: rgb(28, 172, 31);
+    --colorOrange: rgb(238, 150, 35);
+    
+    --inkColor: var(--colorBlack);
+    --backgroundColor: var(--colorWhite);
+    --accentColorA: var(--colorBlue);
+    --accentColorB: var(--colorOrange);
 }
+
+body {
+    font-family: LibreBaskerville, serif;
+    font-size: 1em;
+    background: var(--backgroundColor);
+    color: var(--inkColor);
+    padding: 2em;
+    min-width: 0;
+    max-width: 55em;
+    margin: auto;
+}
+
+
+h1 {
+    font-size: 3em;
+}
+
+a {
+    color: var(--accentColorA);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--accentColorB);
+}
+
+p {
+    font-size: 1.1em;
+    text-align: justify;
+}
+
 
 /* CAPITAL LETTERS */
 h1 +  p::first-letter {
