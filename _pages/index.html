@@ -1,5 +1,19 @@
 ---
 permalink: /
+layout: base
+
+sections:
+  - name: Stream
+    link: /stream
+  - name: Trips
+    link: /trips
+  - name: Who
+    link: /whoami
 ---
 
-Hello Atlas
+<nav>
+    {% for item in page.sections %}
+      <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+    {% endfor %}
+</nav>
+  
