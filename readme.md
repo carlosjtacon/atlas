@@ -21,12 +21,12 @@ I tend to forget all the details, so I want a way to remember.
 - [ ] `category/post` - Article view page for longer format text for every category (days, timeline, tracks, trips) use a different layout per category to adapt the metadata.
 
 ### Types of data / posts:
-- [person.yml](_people/readme.md) ???????? - Maybe in `_data` or not really needed.
 - [day.yml](_posts/days/readme.md)
-- [timeline.yml](_posts/timeline/readme.md)
-- [track.yml](_posts/tracks/readme.md) ???????? - Maybe in `_data` or just using a generator from `assets`
 - [trip.yml](_posts/trips/readme.md)
-- [ ] Generate json data to make it easier to work with it [example](https://github.com/mparuszewski/jekyll-json-generator)
+- [timeline.yml](_posts/timeline/readme.md)
+
+- [tracks](assets/tracks/readme.md)
+- [json data](assets/json/readme.md)
 
 ### Design language
 - [ ] First letter of each post as a lombardic medieval capital letter.
