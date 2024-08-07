@@ -24,7 +24,7 @@
 
 :root {
     --colorBlack: rgb(28, 28, 28);
-    --colorWhite: rgb(230, 230, 230);
+    --colorWhite: rgb(245, 240, 235);
     --colorBlue: rgb(12, 130, 176);
     --colorGreen: rgb(28, 172, 31);
     --colorOrange: rgb(238, 150, 35);
@@ -40,9 +40,9 @@ body {
     font-size: 1em;
     background: var(--backgroundColor);
     color: var(--inkColor);
-    padding: 2em;
+    padding: 3em;
     min-width: 0;
-    max-width: 55em;
+    max-width: 50em;
     margin: auto;
 }
 
