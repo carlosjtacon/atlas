@@ -2,23 +2,18 @@
 category: trips
 
 who:
-  - Carlos
-  - Alix
-  - Mario
-  - Evangelos
+  - who
 when:
-  start: 2022-04-29
-  end: 2022-05-03
+  start: sameasdate
+  end: enddate
 where:
-  name: Snowdonia
-  coordinates: [52.9006, -3.8963]
+  name: where
+  coordinates: [ 0, 0 ]
   to:
 what: 
-  - Hiking
+  - what
 backdrop: .jpg
 track: .gpx
 ---
-
-### Example for a trip post
 
 Here goes the content of the trip post.

@@ -2,13 +2,14 @@
 category: days
 
 who:
-  - who
+  - Carlos
+  - Evangelos
 where:
-  name: where
+  name: Battle Abbey
   coordinates: [0, 0]
-  to:
+  to: Rye
 what: 
-  - what
+  - Hiking
 backdrop: .jpg
 track: .gpx
 ---

@@ -5,7 +5,7 @@ where:
   - city: Copenhagen
     country: Denmark
     coordinates: [ 55.6761, 12.5683 ]
-when: 2019-01-09
+
 what: Landed my first visual effects job at GhostVFX.
 ---
 

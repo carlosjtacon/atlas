@@ -5,7 +5,7 @@ where:
   - city: Alcala de Henares
     country: Spain
     coordinates: [ 40.467, -3.367 ]
-when: 2020-08-31
+
 what: Went back home for the COVID season.
 ---
 

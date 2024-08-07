@@ -11,7 +11,7 @@ when:
   end: 2022-05-03
 where:
   name: Snowdonia
-  coordinates: [52.9006, -3.8963]
+  coordinates: [ 52.9006, -3.8963 ]
   to:
 what: 
   - Hiking
