@@ -67,6 +67,14 @@ p {
     text-align: justify;
 }
 
+h1, h2, h3, h4, p {
+    background-image: url('/assets/images/paper_texture.webp');
+    background-repeat: repeat;
+    background-size: cover;
+    background-clip: text;
+    color: rgba(0, 0, 0, 0);
+}
+
 .section {
     border: solid 3px var(--inkColor);
     box-shadow: 4px 4px 0 var(--shadowColor);
@@ -85,6 +93,7 @@ p {
     color: var(--inkColor);
     -webkit-text-stroke: 3px var(--backgroundColor);
 }
+
 
 /* CAPITAL LETTERS */
 h1 +  p::first-letter {
