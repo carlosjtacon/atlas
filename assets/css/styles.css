@@ -41,7 +41,7 @@ body {
     font-size: 1em;
     background: var(--backgroundColor);
     color: var(--inkColor);
-    padding: 3em;
+    padding: 2em;
     min-width: 0;
     max-width: 50em;
     margin: auto;
@@ -75,23 +75,49 @@ h1, h2, h3, h4, p {
     color: rgba(0, 0, 0, 0);
 }
 
-.section {
-    border: solid 3px var(--inkColor);
-    box-shadow: 4px 4px 0 var(--shadowColor);
+.row {
+    display: flex;
+}
 
-    margin-bottom: 1em;
+.column3 {
+    flex: 33%;
     padding: 1em;
-    height: 100px;
+    padding-bottom: 0;
+}
 
+.section {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+    border: solid 3px var(--inkColor);
+    box-shadow: 4px 4px 0 var(--shadowColor);
 }
 
 .section span {
-    font-size: 5em;
     color: var(--inkColor);
-    -webkit-text-stroke: 3px var(--backgroundColor);
+    -webkit-text-stroke: 1px var(--backgroundColor);
+}
+
+.section-sm {
+    margin: 1em auto;
+    height: 50px;
+}
+
+.section-sm span {
+    margin-left: 0.15em;
+    font-size: 2.5em;
+}
+
+.section-big {
+    margin: 2em auto;
+    height: 65px;
+    width: 650px; 
+}
+
+.section-big span {
+    margin-left: 0.5em;
+    font-size: 3.15em;
 }
 
 .capital {
@@ -110,7 +136,7 @@ h1, h2, h3, h4, p {
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
-.capital img, span {
+.capital img, .capital span {
     position: absolute;
     left: 0;
 }

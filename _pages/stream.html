@@ -9,13 +9,18 @@ categories:
   - timeline
 ---
 
-<ul>
+<div class="row">
   {% for item in page.categories %}
-    <li>
-      <p><a href="{{ item }}">{{ item }}</a></p>
-    </li>
+  <div class="column3">
+    <a href="{{ item }}">
+      <div class="section section-sm" style="background-image: url('/assets/images/capitals/backgrounds/demo.svg');">
+        <span>{{ item | capitalize }}</span>
+      </div>
+    </a>
+  </div>
   {% endfor %}
-</ul>
+</div>
+
 
 <h1>Latest posts</h1>
 
