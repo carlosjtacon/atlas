@@ -19,6 +19,4 @@ backdrop: .jpg
 track: .gpx
 ---
 
-### Hiking Snowdonia
-
 This was our first big trip in the UK.

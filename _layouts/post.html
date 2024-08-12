@@ -3,4 +3,8 @@ layout: default
 ---
 <h1>{{ page.title }}, {{ page.date | date_to_string }}</h1>
 
-{{ content }}
+{% assign capitalLetter = content | slice: 3 %}
+
+{% include capital.html letter=capitalLetter fg="demo" bg="demo" %}
+
+{{ content | remove_first: capitalLetter}}
