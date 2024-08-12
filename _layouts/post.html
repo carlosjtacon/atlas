@@ -1,10 +1,17 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}, {{ page.date | date_to_string }}</h1>
 
-{% assign capitalLetter = content | slice: 3 %}
+<div class="detail-card">
+    <h1>{{page.title}}</h1>
+    {% if page.when.end %}<p class="detail-card-when">{{page.when.start | date_to_string }} to {{page.when.end | date_to_string }}</p>{% else %}<p>{{ page.date | date_to_string }}</p>{% endif %}
+    {% if page.where.to %}<p class="detail-card-where">{{page.where.name}} to {{page.where.to}}</p>{% else %}<p>{{page.where.name}}</p>{% endif %}
+    {% if page.what %}<p class="detail-card-what">{{ page.what | join: "," }}</p>{% endif %}
+    {% if page.who %}<p class="detail-card-who">{{ page.who | join: ", " }}</p>{% endif %}
+</div>
 
-{% include capital.html letter=capitalLetter fg="demo" bg="demo" %}
-
-{{ content | remove_first: capitalLetter}}
+<p>
+    {% assign capital_letter = content | slice: 3 %}
+    {% include capital.html letter=capital_letter fg="demo" bg="demo" %}
+    {{ content | remove_first: capital_letter}}
+</p>
