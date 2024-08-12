@@ -33,7 +33,7 @@ I tend to forget all the details, so I want a way to remember.
     - We can also create a custom font with dynamic width instead.
 - [ ] Medieval-inspired carved wooden engraving style for website elements like navigation, menus... etc
     - Animation of hover elements and show an animation of the carving process
-- [ ] Find a way to add texture to text, to show printing inperfections as if printed.
+- [x] Find a way to add texture to text, to show printing inperfections as if printed.
 - [ ] Ability to have custom css for a post or page - I can define diffenent themes css and then drive them with a post variable to override accent color... etc
 - [ ] Atlas logo design can be the wood mold stamp in 3d / stamped in 2d
 - [ ] Atlas titan character illustrated for about / whoami page by Alix

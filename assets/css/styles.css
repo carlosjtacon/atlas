@@ -24,7 +24,7 @@
 
 :root {
     --colorBlack: rgb(28, 28, 28);
-    --colorWhite: rgb(245, 240, 235);
+    --colorWhite: rgb(230, 222, 211);
     --colorBlue: rgb(12, 130, 176);
     --colorGreen: rgb(28, 172, 31);
     --colorOrange: rgb(238, 150, 35);
@@ -45,6 +45,9 @@ body {
     min-width: 0;
     max-width: 50em;
     margin: auto;
+    background-image: url('/assets/images/paper.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -67,8 +70,8 @@ p {
     text-align: justify;
 }
 
-h1, h2, h3, h4, p {
-    background-image: url('/assets/images/paper_texture.webp');
+h1, h2, h3, h4, p, span {
+    background-image: url('/assets/images/ink.webp');
     background-repeat: repeat;
     background-size: cover;
     background-clip: text;
@@ -91,11 +94,11 @@ h1, h2, h3, h4, p {
     background-position: center center;
 
     border: solid 3px var(--inkColor);
-    box-shadow: 4px 4px 0 var(--shadowColor);
+    box-shadow: 2px 2px 0 var(--shadowColor);
 }
 
 .section span {
-    color: var(--inkColor);
+    /* color: var(--shadowColor); */
     -webkit-text-stroke: 1px var(--backgroundColor);
 }
 
