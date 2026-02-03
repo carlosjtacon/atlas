@@ -2,9 +2,45 @@
 layout: none
 ---
 
+{%- assign days = site.posts | where: "category", "days" -%}
+{%- assign trips = site.posts | where: "category", "trips" -%}
+{%- assign timeline = site.posts | where: "category", "timeline" -%}
+
 {
-    "posts": [ {%for post in site.posts%}
-        "{{post.title}}"{% unless forloop.last %},{% endunless -%}
+    "days": [ {%- for day in days %}
+        {
+            "url": "{{day.url}}",
+            "date": "{{day.date}}",
+            "title": "{{day.title}}",
+            "backdrop": "{{day.backdrop}}",
+            "track": "{{day.track}}",
+            "who": [ {%- for person in day.who %}
+                "{{person}}"{% unless forloop.last %},{% endunless -%}
+            {% endfor %}
+            ],
+            "what": [ {%- for thing in day.what %}
+                "{{thing}}"{% unless forloop.last %},{% endunless -%}
+            {% endfor %}
+            ],
+            "where": {
+                "name": "{{day.where.name}}",
+                "coordinates": {
+                    "lat": "{{day.where.coordinates[0]}}",
+                    "lon": "{{day.where.coordinates[1]}}"
+                },
+                "to": "{{day.where.to}}"
+            }
+        }{% unless forloop.last %},{% endunless -%}
+    {% endfor %} 
+    ],
+    "trips": [ 
+    {%- for trip in trips %}
+        "{{trip.title}}"{% unless forloop.last %},{% endunless -%}
+    {%endfor%}
+    ],
+    "timeline": [
+    {%- for place in timeline %}
+        "{{place.title}}"{% unless forloop.last %},{% endunless -%}
     {%endfor%}
     ]
 }
