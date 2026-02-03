@@ -1,4 +1,6 @@
 {
+  "cssvalidator.enabled" : false,
+  "htmlvalidator.enabled" : false,
   "workspace.color" : 4,
   "workspace.name" : "atlas"
 }
