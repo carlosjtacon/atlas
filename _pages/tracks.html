@@ -8,7 +8,7 @@ title: Tracks
     {% assign tracks = site.static_files | where: "type", "gpx" %}
     {% for track in tracks %}
     <li>
-        <a href="{{ track.basename }}">{{ track.basename }} - {{ track.path }}</a>
+        <a href="{{ track.basename }}">{{ track.basename }}</a>
     </li>
     {% endfor %}
 </ul>
