@@ -1,3 +1,9 @@
+title: Atlas
+description: World.
+url: https://atlas.carlosjtacon.com 
+permalink: "/:categories/:title"
+
+
 collections:
   pages:
     output: true
