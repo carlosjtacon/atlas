@@ -24,7 +24,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      permalink: "/stream/:slugified_categories/:year:month-:title"
+      permalink: "/stream/:categories/:year:month-:title"
       layout: "post"
 
   - scope:
