@@ -25,6 +25,13 @@ defaults:
       path: "assets/tracks"
     values:
       type: gpx
-      
+  
+  - scope:
+      path: ""
+      type: tracks
+    values:
+      layout: track_page
+      permalink: /:category/:basename.html
+
 exclude:
   - "*readme.md"
