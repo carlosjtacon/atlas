@@ -32,60 +32,104 @@ layout: none
 	<script type="module">
 		const map = new maplibregl.Map({
 			style: 'https://tiles.openfreemap.org/styles/liberty',
-			center: [0.693948, 45.20001],
-			zoom: 10,
+			center: [0, 0],
+			zoom: 2,
 			container: 'map',
 		})
+
+		map.on('style.load', () => {
+			map.setProjection({
+				type: 'globe', // Set projection to globe
+			});
+		});
 
 		import {
 			gpx
 		} from "https://unpkg.com/@tmcw/togeojson?module";
 
 		console.log("{{page.gpx_path}}")
-		fetch("{{page.gpx_path}}")
-			.then(function(response) {
-				return response.text();
-			})
-			.then(function(xml) {
-				const geoJSONcontent = gpx(new DOMParser().parseFromString(xml, "text/xml"));
-				console.log(geoJSONcontent)
-				
-				// Add as source to the map
-				map.addSource('route', {
-					'type': 'geojson',
-					'data': geoJSONcontent
-				});
+		map.on('load', async () => {
+			{% comment %} {% assign icons = site.static_files %}
+			{%- for icon in icons %}
+			{%- if icon.path contains 'mapout-maki' %}
+			
+			const image_{{forloop.index}} = await map.loadImage('{{site.url}}{{icon.path}}');
+			map.addImage('{{icon.basename}}', image_{{forloop.index}}.data);
+			
+			{%- endif %}
+			{%- endfor %} {% endcomment %}
+			
+			fetch("{{page.gpx_path}}")
+				.then(function(response) {
+					return response.text();
+				})
+				.then(function(xml) {
+					const geoJSONcontent = gpx(new DOMParser().parseFromString(xml, "text/xml"));
+					console.log(geoJSONcontent)
 
-				map.addLayer({
-					'id': 'route',
-					'type': 'line',
-					'source': 'route',
-					'layout': {
-						'line-join': 'round',
-						'line-cap': 'round'
-					},
-					'paint': {
-						'line-color': '#f00',
-						'line-width': 8
-					}
-				});
-				
-				const coordinates = geoJSONcontent.features[0].geometry.coordinates;
-				
-				// Pass the first coordinates in the LineString to `lngLatBounds` &
-				// wrap each coordinate pair in `extend` to include them in the bounds
-				// result. A variation of this technique could be applied to zooming
-				// to the bounds of multiple Points or Polygon geometries - it just
-				// requires wrapping all the coordinates with the extend method.
-				const bounds = coordinates.reduce((bounds, coord) => {
-					return bounds.extend(coord);
-				}, new maplibregl.LngLatBounds(coordinates[0], coordinates[0]));
-				
-				map.fitBounds(bounds, {
-					padding: 20
-				});
+					// Add as source to the map
+					map.addSource('route', {
+						'type': 'geojson',
+						'data': geoJSONcontent
+					});
 
-			});
+					map.addLayer({
+						'id': 'route-line',
+						'type': 'line',
+						'source': 'route',
+						'layout': {
+							'line-join': 'round',
+							'line-cap': 'round'
+						},
+						'paint': {
+							'line-color': ['get', 'gpxx_DisplayColor'],
+							'line-width': 8
+						},
+						'filter': ['==', '$type', 'LineString']
+					});
+
+					map.addLayer({
+						'id': 'route-points',
+						'type': 'circle',
+						'source': 'route',
+						'paint': {
+							'circle-radius': 10,
+							'circle-color': ["concat", "#", ['get', 'mapout_color']]
+						},
+						'filter': ['==', '$type', 'Point']
+					});
+					
+					map.addLayer({
+						'id': 'route-points-labels',
+						'type': 'symbol',
+						'source': 'route',
+						'layout': {
+							'icon-image': ["downcase", ['get', 'sym']],
+							'text-field': ['get', 'name'],
+							'text-font': ['Noto Sans Regular'],
+							'text-offset': [0, 1.25],
+							'text-anchor': 'top'
+						},
+						'filter': ['==', '$type', 'Point']
+					});
+
+					const coordinates = geoJSONcontent.features[0].geometry.coordinates;
+
+					// Pass the first coordinates in the LineString to `lngLatBounds` &
+					// wrap each coordinate pair in `extend` to include them in the bounds
+					// result. A variation of this technique could be applied to zooming
+					// to the bounds of multiple Points or Polygon geometries - it just
+					// requires wrapping all the coordinates with the extend method.
+					const bounds = coordinates.reduce((bounds, coord) => {
+						return bounds.extend(coord);
+					}, new maplibregl.LngLatBounds(coordinates[0], coordinates[0]));
+
+					map.fitBounds(bounds, {
+						padding: 20
+					});
+
+				});
+		});
 	</script>
 </body>
 
