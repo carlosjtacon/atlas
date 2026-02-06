@@ -49,15 +49,23 @@ layout: none
 
 		console.log("{{page.gpx_path}}")
 		map.on('load', async () => {
-			{% comment %} {% assign icons = site.static_files %}
-			{%- for icon in icons %}
-			{%- if icon.path contains 'mapout-maki' %}
-			
-			const image_{{forloop.index}} = await map.loadImage('{{site.url}}{{icon.path}}');
-			map.addImage('{{icon.basename}}', image_{{forloop.index}}.data);
-			
-			{%- endif %}
-			{%- endfor %} {% endcomment %}
+			const existingImages = {};
+			map.on('styleimagemissing', async (e) => {
+				if (existingImages[e.id]) {
+					return;
+				}
+				existingImages[e.id] = true;
+				const response = await fetch('/assets/icons/mapout-maki/' + e.id + '.svg');
+				const svgText = await response.text();
+				const svg = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgText);
+				const image = new Image();
+				const promise = new Promise((resolve) => {
+					image.onload = resolve;
+				});
+				image.src = svg;
+				await promise; // Wait for the image to load
+				map.addImage(e.id, image);
+			});
 			
 			fetch("{{page.gpx_path}}")
 				.then(function(response) {
@@ -104,7 +112,7 @@ layout: none
 						'type': 'symbol',
 						'source': 'route',
 						'layout': {
-							'icon-image': ["downcase", ['get', 'sym']],
+							'icon-image': ["concat", "mapout-", ['get', 'sym']],
 							'text-field': ['get', 'name'],
 							'text-font': ['Noto Sans Regular'],
 							'text-offset': [0, 1.25],
