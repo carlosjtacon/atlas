@@ -51,7 +51,7 @@ layout: none
 		map.on('load', async () => {
 			const existingImages = {};
 			map.on('styleimagemissing', async (e) => {
-				if (existingImages[e.id]) {
+				if (existingImages[e.id] || !e.id.includes('mapout')) {
 					return;
 				}
 				existingImages[e.id] = true;
@@ -90,8 +90,8 @@ layout: none
 							'line-cap': 'round'
 						},
 						'paint': {
-							'line-color': ['get', 'gpxx_DisplayColor'],
-							'line-width': 8
+							'line-color': ['coalesce', ['get', 'gpxx_DisplayColor'], 'red'],
+							'line-width': 4
 						},
 						'filter': ['==', '$type', 'LineString']
 					});
@@ -102,7 +102,7 @@ layout: none
 						'source': 'route',
 						'paint': {
 							'circle-radius': 10,
-							'circle-color': ["concat", "#", ['get', 'mapout_color']]
+							'circle-color': ["concat", "#", ['coalesce', ['get', 'mapout_color'], 'F00']]
 						},
 						'filter': ['==', '$type', 'Point']
 					});
@@ -112,7 +112,7 @@ layout: none
 						'type': 'symbol',
 						'source': 'route',
 						'layout': {
-							'icon-image': ["concat", "mapout-", ['get', 'sym']],
+							'icon-image': ['image', ["concat", "mapout-", ['get', 'sym']]],
 							'text-field': ['get', 'name'],
 							'text-font': ['Noto Sans Regular'],
 							'text-offset': [0, 1.25],
