@@ -101,8 +101,10 @@ layout: none
 						'type': 'circle',
 						'source': 'route',
 						'paint': {
-							'circle-radius': 10,
-							'circle-color': ["concat", "#", ['coalesce', ['get', 'mapout_color'], 'F00']]
+							'circle-radius': 15,
+							'circle-color': ["concat", "#", ['coalesce', ['get', 'mapout_color'], 'F00']],
+							'circle-opacity': 0.75,
+							'circle-stroke-width': 2
 						},
 						'filter': ['==', '$type', 'Point']
 					});
@@ -114,8 +116,9 @@ layout: none
 						'layout': {
 							'icon-image': ['image', ["concat", "mapout-", ['get', 'sym']]],
 							'text-field': ['get', 'name'],
-							'text-font': ['Noto Sans Regular'],
-							'text-offset': [0, 1.25],
+							'text-font': ['LibreBaskerville Bold'],
+							'text-size': 12,
+							'text-offset': [0, 1.5],
 							'text-anchor': 'top'
 						},
 						'filter': ['==', '$type', 'Point']
