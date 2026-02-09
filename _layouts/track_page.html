@@ -45,7 +45,7 @@ layout: none
 
 		import {
 			gpx
-		} from "https://unpkg.com/@tmcw/togeojson?module";
+		} from "/assets/javascript/togeojson/togeojson.es.mjs.js";
 
 		console.log("{{page.gpx_path}}")
 		map.on('load', async () => {
@@ -116,7 +116,7 @@ layout: none
 						'layout': {
 							'icon-image': ['image', ["concat", "mapout-", ['get', 'sym']]],
 							'text-field': ['get', 'name'],
-							'text-font': ['LibreBaskerville Bold'],
+							'text-font': ['Noto Sans Bold'],
 							'text-size': 12,
 							'text-offset': [0, 1.5],
 							'text-anchor': 'top'
