@@ -9,6 +9,8 @@ layout: none
 	<meta charset="utf-8" />
 	<title>Maplibre WGS84 Topographic Vector Basemaps Demo</title>
 	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+	
+	<script src="https://unpkg.com/chartjs/chart.js"></script>
 	<script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
 	<link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
 
@@ -24,11 +26,37 @@ layout: none
 			bottom: 0;
 			width: 100%;
 		}
+		
+		#chart-container {
+			height: 25%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 10;
+			background-color: rgba(255, 255, 255, 0.9);
+			text-align: center;
+		}
+		
+		#chart-inner-container {
+			position: relative;
+			margin: auto;
+			height: 100%;
+			width: 100vw;
+		}
 	</style>
 </head>
 
 <body>
-	<div id="map"></div>
+	<div id="map">
+		<!-- <div id="chart-container">
+			<div id="chart-inner-container">
+				<canvas id="chart-canvas"></canvas>
+			</div>
+		</div> -->
+	</div>
+	
 	<script type="module">
 		const map = new maplibregl.Map({
 			style: 'https://tiles.openfreemap.org/styles/liberty',
@@ -36,6 +64,54 @@ layout: none
 			zoom: 2,
 			container: 'map',
 		})
+		
+		// const myLineChart = new Chart(document.getElementById('chart-canvas'), {
+		// 	type: 'line',
+		// 	data: {
+		// 		labels: [],
+		// 		datasets: []
+		// 	},
+		// 	options: {
+		// 		plugins: {
+		// 			legend: {
+		// 				display: false
+		// 			},
+		// 			title: {
+		// 				display: true,
+		// 				align: 'start',
+		// 				text: 'Elevation (m)'
+		// 			}
+		// 		},
+		// 		maintainAspectRatio: false,
+		// 		responsive: true,
+		// 		scales: {
+		// 			x: {
+		// 				grid: {
+		// 					display: false
+		// 				}
+		// 			},
+		// 			y: {
+		// 				min: 0,
+		// 				grid: {
+		// 					display: false
+		// 				}
+		// 			}
+		// 		},
+		// 		elements: {
+		// 			point: {
+		// 				radius: 0
+		// 			}
+		// 		},
+		// 		layout: {
+		// 			padding: {
+		// 				top: 6,
+		// 				right: 20,
+		// 				bottom: -10,
+		// 				left: 20
+		// 			}
+		// 		}
+		// 	}
+		// });
 
 		map.on('style.load', () => {
 			map.setProjection({
@@ -45,7 +121,7 @@ layout: none
 
 		import {
 			gpx
-		} from "/assets/javascript/togeojson/togeojson.es.mjs.js";
+		} from "https://unpkg.com/@tmcw/togeojson?module";
 
 		console.log("{{page.gpx_path}}")
 		map.on('load', async () => {
@@ -138,6 +214,34 @@ layout: none
 					map.fitBounds(bounds, {
 						padding: 20
 					});
+					
+				// 	function updateElevationProfile() {
+				// 		// split the line into 1km segments
+				// 		const chunks = geoJSONcontent.features[0].geometry;
+				// 	
+				// 		// get the elevation for the leading coordinate of each segment
+				// 		const elevations = [
+				// 			...chunks.map((feature) => {
+				// 				return feature.geometry.coordinates[3]
+				// 				);
+				// 			}),
+				// 			// do not forget the last coordinate
+				// 			hunks[chunks.length - 1].geometry.coordinates[3]
+				// 		];
+				// 	
+				// 		// add dummy labels
+				// 		myLineChart.data.labels = elevations.map(() => '');
+				// 		myLineChart.data.datasets[0] = {
+				// 			data: elevations,
+				// 			fill: false,
+				// 			tension: 0.4
+				// 		};
+				// 		myLineChart.update();
+				// 	}
+				// 	
+				// 	// trigger the first chart draw after the DEM tiles have loaded
+				// 	await map.once('idle');
+				// 	updateElevationProfile();
 
 				});
 		});
