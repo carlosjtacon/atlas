@@ -10,7 +10,7 @@ layout: none
 	<title>Maplibre WGS84 Topographic Vector Basemaps Demo</title>
 	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 	
-	<script src="https://unpkg.com/chartjs/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
 	<link href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" rel="stylesheet" />
 
@@ -43,19 +43,19 @@ layout: none
 			position: relative;
 			margin: auto;
 			height: 100%;
-			width: 100vw;
+			width: 100%;
 		}
 	</style>
 </head>
 
 <body>
-	<div id="map">
-		<!-- <div id="chart-container">
-			<div id="chart-inner-container">
-				<canvas id="chart-canvas"></canvas>
-			</div>
-		</div> -->
+	<div id="chart-container">
+		<div id="chart-inner-container">
+			<canvas id="chart-canvas"></canvas>
+		</div>
 	</div>
+		
+	<div id="map"></div>
 	
 	<script type="module">
 		const map = new maplibregl.Map({
@@ -63,55 +63,57 @@ layout: none
 			center: [0, 0],
 			zoom: 2,
 			container: 'map',
-		})
+		});
 		
-		// const myLineChart = new Chart(document.getElementById('chart-canvas'), {
-		// 	type: 'line',
-		// 	data: {
-		// 		labels: [],
-		// 		datasets: []
-		// 	},
-		// 	options: {
-		// 		plugins: {
-		// 			legend: {
-		// 				display: false
-		// 			},
-		// 			title: {
-		// 				display: true,
-		// 				align: 'start',
-		// 				text: 'Elevation (m)'
-		// 			}
-		// 		},
-		// 		maintainAspectRatio: false,
-		// 		responsive: true,
-		// 		scales: {
-		// 			x: {
-		// 				grid: {
-		// 					display: false
-		// 				}
-		// 			},
-		// 			y: {
-		// 				min: 0,
-		// 				grid: {
-		// 					display: false
-		// 				}
-		// 			}
-		// 		},
-		// 		elements: {
-		// 			point: {
-		// 				radius: 0
-		// 			}
-		// 		},
-		// 		layout: {
-		// 			padding: {
-		// 				top: 6,
-		// 				right: 20,
-		// 				bottom: -10,
-		// 				left: 20
-		// 			}
-		// 		}
-		// 	}
-		// });
+		const myLineChart = new Chart(document.getElementById('chart-canvas'), {
+			type: 'line',
+			data: {
+				labels: [],
+				datasets: []
+			},
+			options: {
+				plugins: {
+					legend: {
+						display: false
+					},
+					title: {
+						display: true,
+						align: 'start',
+						text: 'Elevation (m)'
+					}
+				},
+				maintainAspectRatio: false,
+				responsive: true,
+				scales: {
+					x: {
+						grid: {
+							display: false
+						}
+					},
+					y: {
+						min: 0,
+						grid: {
+							display: false
+						}
+					}
+				},
+				elements: {
+					point: {
+						radius: 0
+					}
+				},
+				layout: {
+					padding: {
+						top: 6,
+						right: 20,
+						bottom: -10,
+						left: 20
+					}
+				}
+			}
+		});
+		
+		
 
 		map.on('style.load', () => {
 			map.setProjection({
@@ -215,33 +217,32 @@ layout: none
 						padding: 20
 					});
 					
-				// 	function updateElevationProfile() {
-				// 		// split the line into 1km segments
-				// 		const chunks = geoJSONcontent.features[0].geometry;
-				// 	
-				// 		// get the elevation for the leading coordinate of each segment
-				// 		const elevations = [
-				// 			...chunks.map((feature) => {
-				// 				return feature.geometry.coordinates[3]
-				// 				);
-				// 			}),
-				// 			// do not forget the last coordinate
-				// 			hunks[chunks.length - 1].geometry.coordinates[3]
-				// 		];
-				// 	
-				// 		// add dummy labels
-				// 		myLineChart.data.labels = elevations.map(() => '');
-				// 		myLineChart.data.datasets[0] = {
-				// 			data: elevations,
-				// 			fill: false,
-				// 			tension: 0.4
-				// 		};
-				// 		myLineChart.update();
-				// 	}
-				// 	
-				// 	// trigger the first chart draw after the DEM tiles have loaded
-				// 	await map.once('idle');
-				// 	updateElevationProfile();
+					
+					const chunks = geoJSONcontent.features[0].geometry;
+					console.log(chunks)
+					for (ele in chunks) {
+						console.log(ele)
+					}
+						
+				
+					// get the elevation for the leading coordinate of each segment
+					// const elevations = [
+					// 	...chunks.map((feature) => {
+					// 		return feature.geometry.coordinates[3]
+					// 		);
+					// 	}),
+					// 	// do not forget the last coordinate
+					// 	chunks[chunks.length - 1].geometry.coordinates[3]
+					// ];
+				// 
+				// 	// add dummy labels
+				// 	myLineChart.data.labels = elevations.map(() => '');
+				// 	myLineChart.data.datasets[0] = {
+				// 		data: elevations,
+				// 		fill: false,
+				// 		tension: 0.4
+				// 	};
+				// 	myLineChart.update();
 
 				});
 		});

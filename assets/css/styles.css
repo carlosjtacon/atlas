@@ -48,7 +48,7 @@ body {
     margin: auto;
     background-image: url('/assets/images/paper.webp');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 
